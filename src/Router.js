@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router";
-import LogIn from "./containers/login";
+import Login from "./components/Login";
 import { Link } from "react-router-dom";
 import cookie from "cookie";
+import Register from "./components/Register";
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
@@ -18,9 +19,9 @@ const ProtectedRoute = (props) => {
 const Router = () => {
   return (
     <>
-      <Navigation />
       <Routes>
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
