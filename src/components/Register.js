@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
-import cookie from "cookie";
 import axios from "axios";
 
 const Register = () => {
