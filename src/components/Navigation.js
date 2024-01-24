@@ -13,7 +13,7 @@ const Navigation = () => {
           variant="h6"
           style={{ flexGrow: "1", textDecoration: "None" }}
         >
-          <Link to="/">Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </Typography>
         <ul className="nav-list">
           <li className="nav-list-item">
