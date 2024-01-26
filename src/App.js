@@ -15,6 +15,9 @@ function App() {
           <Button variant="primary">Add Budget</Button>
           <Button variant="primary">Add Expense</Button>
         </Stack>
+        <div
+          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill," }}
+        />
       </Container>
       <Router />
     </BrowserRouter>
