@@ -26,7 +26,7 @@ const LogIn = (props) => {
     document.cookie = cookie.serialize("loggedIn", true, {
       maxAge: 60 * 60,
     });
-
+    props.logOutUser();
     navigate("/");
   };
 

@@ -77,7 +77,7 @@ const Register = () => {
             color="primary"
             sx={{ marginTop: "20px" }}
           >
-            Login
+            Register
           </Button>
         </form>
       </Container>
