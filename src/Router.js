@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import cookie from "cookie";
 import Register from "./components/Register";
 import Navigation from "./components/Navigation";
+import Budget from "./components/Budget";
+import Dashboard from "./components/Dashboard";
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
@@ -25,6 +27,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/budget" element={<Budget />} />
       </Routes>
     </>
   );

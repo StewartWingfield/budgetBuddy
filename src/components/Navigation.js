@@ -17,12 +17,12 @@ const Navigation = () => {
         </Typography>
         <ul className="nav-list">
           <li className="nav-list-item">
-            <Link to="/">Listings</Link>
+            <Link to="/Register">Register</Link>
           </li>
 
           {document.cookie.includes("loggedIn=true") ? (
             <li className="nav-list-item">
-              <Link to="/add">Add</Link>
+              <Link to="/Budget">Budget</Link>
             </li>
           ) : null}
 
@@ -32,7 +32,6 @@ const Navigation = () => {
               document.cookie = cookie.serialize("loggedIn", null, {
                 maxAge: 0,
               });
-              props.logOutUser();
               navigate("/login");
             }}
           >
