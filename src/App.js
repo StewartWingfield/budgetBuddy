@@ -4,7 +4,7 @@ import Router from "./Router";
 import { BrowserRouter } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button, Stack } from "react-bootstrap";
-import { Button } from "bootstrap";
+import BudgetCard from "./components/BudgetCard";
 
 function App() {
   return (
@@ -16,8 +16,15 @@ function App() {
           <Button variant="primary">Add Expense</Button>
         </Stack>
         <div
-          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill," }}
-        />
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr",
+            gap: "1rem",
+            alignItems: "flex-start",
+          }}
+        >
+          <BudgetCard name="Entertainment" amount={200} max={1000}></BudgetCard>
+        </div>
       </Container>
       <Router />
     </BrowserRouter>
