@@ -1,12 +1,19 @@
 import { Button, Form, Modal } from "react-bootstrap";
 import { useRef } from "react";
+import { useBudgets } from "../contexts/BudgetsContext";
 
 export default function AddBudgetModal({ show, handleClose }) {
   const nameRef = useRef();
   const maxRef = useRef();
+  const { addBudget } = useBudgets();
+
   function handleSubmit(e) {
     e.preventDefault();
-    name: nameRef.current.value;
+    addBudget({
+      name: nameRef.current.value,
+      max: parseFloat(maxRef.current.value),
+    });
+    handleClose();
   }
 
   return (
