@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { v4 as uuidV4 } from "uuid";
 import useLocalStorage from "../hooks/storage";
+/* import cookie from  "cookie" */
 
 const BudgetsContext = React.createContext();
 
@@ -11,12 +12,30 @@ export function useBudgets() {
 }
 
 export const BudgetsProvider = ({ children }) => {
-  const [budgets, setBudgets] = useLocalStorage("budgets", []);
+  const [budgets, setBudgets] = useLocalStorage("budgets", []); //front
+  /*   const [budgets, setBudgets] = useState([]) // back */
   const [expenses, setExpenses] = useLocalStorage("expenses", []);
 
   function getBudgetExpenses(budgetId) {
     return expenses.filter((expense) => expense.budgetId === budgetId);
   }
+
+  /* function getBudgetExpenses() {
+    const cookies = cookie.parse(document.cookie)
+
+    axios.get("localhost/3000/transactions", {
+      headers: {
+        Authorization: `Bearer ${cookies.token}`
+      }
+    }).then((res) => {
+      console.log(res.data)
+       setBudgets(res.data)
+    })
+
+  } */
+
+  // create table on database - hold transactions column: user/ foreign userid
+
   function addExpense({ description, amount, budgetId }) {
     setExpenses((prevExpenses) => {
       return [...prevExpenses, { id: uuidV4(), description, amount, budgetId }];
@@ -31,6 +50,13 @@ export const BudgetsProvider = ({ children }) => {
     });
   }
   function deleteBudget({ id }) {
+    setExpenses((prevExpenses) => {
+      return prevExpenses.map((expense) => {
+        if (expense.budgetId !== id) return expense;
+        return { ...expense, budgetId: UNCATEGORIZED_BUDGET_ID };
+      });
+    });
+
     setBudgets((prevBudgets) => {
       return prevBudgets.filter((budget) => budget.id !== id);
     });
