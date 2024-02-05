@@ -32,6 +32,9 @@ const Navigation = () => {
               document.cookie = cookie.serialize("loggedIn", null, {
                 maxAge: 0,
               });
+              document.cookie = cookie.serialize("token", null, {
+                maxAge: 0,
+              });
               navigate("/login");
             }}
           >

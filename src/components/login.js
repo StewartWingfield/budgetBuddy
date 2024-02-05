@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
 import cookie from "cookie";
+import axios from "axios";
 
 const LogIn = (props) => {
   const navigate = useNavigate();
@@ -21,13 +22,20 @@ const LogIn = (props) => {
   };
 
   const login = (e) => {
-    /* props.logInUser(state.username); */
     e.preventDefault();
-    document.cookie = cookie.serialize("loggedIn", true, {
-      maxAge: 60 * 60,
-    });
-    /* props.logOutUser(); */
-    navigate("/");
+    axios
+      .post("http://localhost:4001/auth/login", {
+        username: state.username,
+        password: state.password,
+      })
+      .then((res) => {
+        console.log(res);
+        document.cookie = cookie.serialize("loggedIn", true, {
+          maxAge: 60000 * 60000,
+        });
+        document.cookie = cookie.serialize("token", res.data.token);
+      });
+    navigate("/budget");
   };
 
   return (

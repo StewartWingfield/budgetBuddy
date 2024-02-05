@@ -32,9 +32,21 @@ export const BudgetsProvider = ({ children }) => {
        setBudgets(res.data)
     })
 
-  } */
+  } 
 
   // create table on database - hold transactions column: user/ foreign userid
+
+  /* axios
+      .post("http://localhost:4001/budget", {
+        expenses: state.expenses
+      })
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }; */
 
   function addExpense({ description, amount, budgetId }) {
     setExpenses((prevExpenses) => {

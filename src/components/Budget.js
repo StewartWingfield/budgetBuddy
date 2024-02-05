@@ -6,7 +6,7 @@ import AddExpenseModal from "./AddExpenseModal";
 import UncategorizedBudgetCard from "./UncategorizedBudgetCard";
 import TotalBudgetCard from "./TotalBudgetCard";
 import ViewExpensesModal from "./ViewExpensesModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   UNCATEGORIZED_BUDGET_ID,
   useBudgets,
@@ -18,6 +18,7 @@ export default function Budget() {
   const [viewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState();
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
   const { budgets, getBudgetExpenses } = useBudgets();
+  console.log("budgetExpense", getBudgetExpenses);
 
   function openAddExpenseModal(budgetId) {
     setShowAddExpenseModal(true);
