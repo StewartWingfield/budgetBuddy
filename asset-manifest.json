@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/capstoneFront/static/css/main.b1d7ec7b.css",
-    "main.js": "/capstoneFront/static/js/main.d06daee8.js",
-    "static/js/787.55bfb366.chunk.js": "/capstoneFront/static/js/787.55bfb366.chunk.js",
-    "index.html": "/capstoneFront/index.html",
-    "main.b1d7ec7b.css.map": "/capstoneFront/static/css/main.b1d7ec7b.css.map",
-    "main.d06daee8.js.map": "/capstoneFront/static/js/main.d06daee8.js.map",
-    "787.55bfb366.chunk.js.map": "/capstoneFront/static/js/787.55bfb366.chunk.js.map"
+    "main.css": "/budgetBuddy/static/css/main.b1d7ec7b.css",
+    "main.js": "/budgetBuddy/static/js/main.893568c8.js",
+    "static/js/787.55bfb366.chunk.js": "/budgetBuddy/static/js/787.55bfb366.chunk.js",
+    "index.html": "/budgetBuddy/index.html",
+    "main.b1d7ec7b.css.map": "/budgetBuddy/static/css/main.b1d7ec7b.css.map",
+    "main.893568c8.js.map": "/budgetBuddy/static/js/main.893568c8.js.map",
+    "787.55bfb366.chunk.js.map": "/budgetBuddy/static/js/787.55bfb366.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1d7ec7b.css",
-    "static/js/main.d06daee8.js"
+    "static/js/main.893568c8.js"
   ]
 }
